@@ -1,0 +1,277 @@
+<style>
+.myname{
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(60, 34, 0);
+    font-family: Tahoma, sans-serif;
+    letter-spacing: 1px;
+    margin-top: 40px;
+}
+.lower-block{
+    font-size: 15px;
+    text-align: justify;
+    color: rgb(60, 34, 0);
+    font-family: Tahoma, sans-serif;
+    width: 70%; /* Ajustei a largura para 70% */
+    margin: 50px auto; /* Centralizei o bloco verticalmente e ajustei a margem */
+    padding: 20px; /* Adicionei um preenchimento interno */
+}
+.myrole {
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(60, 34, 0);
+    font-family:Tahoma, sans-serif;
+    letter-spacing:1px;
+    margin-bottom: -13px;
+    margin-top: 0px;
+    display: inline-block;
+}
+.myrole_specific {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(60, 34, 0);
+    font-family:Tahoma, sans-serif;
+    letter-spacing:-0.8px;
+    display: inline-block;
+}
+
+.headers {
+    
+    color: rgb(60, 34, 0);
+    font-family:Tahoma, sans-serif;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 10px;
+}
+.headers:hover {
+    background-color: rgb(60, 34, 0);
+    color: white;
+    transition: 0.1s;
+    border-radius: 15px;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3);
+    padding: 8px;
+}
+.headers:active {
+    opacity: 0.7;
+    transform: scale(1.1);
+    transition: opacity 0.3s, transform 0.3s;
+}
+.lower-block {
+    font-size: 15px;
+    text-align: justify;
+    color: rgb(60, 34, 0);
+    font-family:Tahoma, sans-serif;
+    width: 450px;
+    display: inline-block;
+    position: fixed;
+    line-height: 1.8;
+    bottom: 0;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    right: 0;
+    transition: opacity 0.3s ease;
+}
+
+@media only screen and (max-width: 1490px) {
+    .lower-block {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+.upper-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 50px;
+    margin-left: 50px;
+    display: inline-block;
+}
+.head-block {
+    border: 0px solid rgb(60, 34, 0);
+    box-shadow: 1px 7px 25px rgb(60, 34, 0);
+    width: 300px;
+    height:15px;
+    padding: 10px;
+    border-radius: 35px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 50px;
+    margin-right: 50px;
+    display: inline-block;
+}
+.inline-link {
+    color: rgb(60, 34, 0);
+    font-family:Tahoma, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+}
+.inline-link:hover {
+    color: rgb(157, 89, 0);
+    text-decoration: underline;
+}
+.mylinks {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(60, 34, 0);
+    letter-spacing:1px;
+    display: inline-block;
+    text-decoration: none;
+    font-family:Tahoma, sans-serif;
+    margin-top: 1px;
+    padding-left: 10px;
+}
+.entire-block {
+    position: fixed;
+    top: 1%; /* Ajuste a distância do topo conforme necessário */
+    left: 1%; /* Ajuste a distância da esquerda conforme necessário */
+    right: 1%; /* Ajuste a distância da direita conforme necessário */
+    bottom: 1%; /* Ajuste a distância da parte inferior conforme necessário */
+    border-radius: 20px; /* Define os cantos arredondados */
+    background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo com transparência */
+    border: solid rgb(60, 34, 0); /* Borda sólida */
+    box-shadow: 0px 0px 100px rgb(60, 34, 0); /* Sombra */
+    padding: 20px; /* Espaçamento interno */
+}
+#map {
+    width: 60vw;
+    height: 60vh;
+    margin: 50px;
+    border-radius: 20px;
+    box-shadow: 1px 7px 25px rgb(60, 34, 0);
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    border-style: solid;
+    border-color: rgb(60, 34, 0);   
+}
+
+@media (max-width: 400px) {
+    #map {
+        width: 70vw; /* Ajuste o tamanho conforme necessário */
+        height: 40vh; /* Ajuste o tamanho conforme necessário */
+    }
+}
+
+@media (max-width: 200px) {
+    #map {
+        width: 60vw; /* Ajuste o tamanho conforme necessário */
+        height: 30vh; /* Ajuste o tamanho conforme necessário */
+    }
+}
+</style>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio - Anderson Stolfi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    </head>
+    <body>
+        <div class="entire-block">
+            <div class= head-block>
+                <a class="headers" href="">
+                    HOME
+                </a>
+                <a class="headers" href="about">
+                    ABOUT ME
+                </a>
+                <a class="headers" href="projects">
+                    PROJECTS
+                </a>
+                <a class="headers" href="cv">
+                    DOWNLOAD MY CV
+                </a>
+            </div>
+            <div class="upper-block">
+                <p class="myname">
+                    ANDERSON <br> STOLFI
+                </p>
+
+                <p class="myrole">
+                    GIS DEVELOPER 
+                </p>
+
+                <p class="myrole_specific">
+                    and environmental engineer
+                </p>
+                <br>
+                <p class="mylinks">
+                    <a class="mylinks" href="https://www.linkedin.com/in/anderson-stolfi-50263b1b0/?originalSubdomain=br" target="_blank">
+                        <img src="../static/images/linkedin.png" alt="LinkedIn" style="max-width: 20px;">
+                    </a>
+                    
+                    <a class="mylinks" href="https://github.com/popogis24" target="_blank">
+                        <img src="../static/images/github.png" alt="GitHub" style="max-width: 20px;">
+                    </a>
+                    <a class="mylinks" href="https://stackoverflow.com/users/22411984/anderson-stolfi" target="_blank">
+                        <img src="../static/images/stackoverflow.png" alt="Stackoverflow" style="max-width: 20px;">
+                    </a>
+                    
+                    <a class="mylinks" href="https://api.whatsapp.com/send?phone=5547984047334" target="_blank">
+                        <img src="../static/images/whatsapp.png" alt="Whatsapp" style="max-width: 20px;">
+                    </a>
+                    <a class= "mylinks" href="https://leetcode.com/andersonjj/"target="_blank"">
+                        <img src="../static/images/leetcode.png" alt="LeetCode" style="max-width: 20px;">
+                    </a>
+            </div>
+            <div class="lower-block">
+                Hey, it's great to see you've stopped by my portfolio! It's always
+                    nice to have visitors here. I'm constantly updating it with fresh 
+                    content, so there's always something new in the
+                    <a class ="inline-link" href="projects">
+                        Projects</a>  
+                    tab. Why don't you take a look? You might find something that inspires you or 
+                    piques your interest. Feel free to explore, and if you have any 
+                    questions or want to exchange ideas, I'm here. Enjoy your visit! 
+            </div>  
+        </div>
+    <div id="map"></div>
+    </body>
+</html>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+    // Inicialize o mapa Leaflet
+    var map = L.map('map').setView([-18, -59], 3.4);
+
+    // Adicione os tiles do Thunderforest Landscape ao mapa
+    L.tileLayer('https://tile.thunderforest.com/mobile-atlas/{z}/{x}/{y}.png?apikey=9e52d2f607d64a74b5de31457faf5469', {
+        attribution: '&copy; <a href="https://www.thunderforest.com/maps/landscape/">Thunderforest</a>'
+    }).addTo(map);
+
+    // Adicione os limites estaduais do Brasil ao mapa
+    fetch('https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/brazil-states.geojson')
+        .then(response => response.json())
+        .then(data => {
+            L.geoJSON(data, {
+                style: function(feature) {
+                    return {
+                        color: '#1a3315', // cor da linha dos limites estaduais
+                        weight: 2, // espessura da linha
+                        fillOpacity: 0 // não preencher
+                    };
+                }
+            }).addTo(map);
+        });
+
+    // Adicione um marcador no mapa
+    var myIcon = L.icon({
+    iconUrl: '../static/images/map_pointer.png',
+    iconSize: [38, 35],
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94]
+    });
+
+    L.marker([-18, -59], {icon: myIcon}).addTo(map)
+        .bindPopup('A pretty CSS popup.<br> Easily customizable.');
+    L.marker([-21, -56], {icon: myIcon}).addTo(map)
+        .bindPopup('A pretty CSS popup.<br> Easily customizable.');
+    L.marker([-25, -51], {icon: myIcon}).addTo(map)
+        .bindPopup('A pretty CSS popup.<br> Easily customizable.');
+    L.marker([-10, -41], {icon: myIcon}).addTo(map)
+        .bindPopup('A pretty CSS popup.<br> Easily customizable.');
+</script>
